@@ -25,5 +25,8 @@ public class ScreenShot {
                 + "/ScreenShots/section.png");
         FileUtils.copyFile(sourceFile, targetLocation);
         driver.quit();
+        FileUtils.copyFile(sourceFile, targetFile1);
+        //driver.quit();
+        driver.close();
     }
 }
