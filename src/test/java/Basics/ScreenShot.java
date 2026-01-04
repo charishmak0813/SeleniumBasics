@@ -20,11 +20,10 @@ public class ScreenShot {
         WebElement section = driver.findElement(By.id("sectionId"));
         File sourceFile = section.getScreenshotAs(OutputType.FILE);
 
-// Save to target location
+        // Save to target location
         File targetFile1 = new File(System.getProperty("user.dir")
                 + "/ScreenShots/section.png");
-        FileUtils.copyFile(sourceFile, targetFile);
+        FileUtils.copyFile(sourceFile, targetFile1);
         driver.quit();
-
     }
 }
