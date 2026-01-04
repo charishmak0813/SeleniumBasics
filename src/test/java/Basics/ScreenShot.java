@@ -24,6 +24,7 @@ public class ScreenShot {
         File targetFile1 = new File(System.getProperty("user.dir")
                 + "/ScreenShots/section.png");
         FileUtils.copyFile(sourceFile, targetFile1);
-        driver.quit();
+        //driver.quit();
+        driver.close();
     }
 }
