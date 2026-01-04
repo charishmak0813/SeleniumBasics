@@ -17,7 +17,7 @@ public class ScreenShot {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.get("https://www.google.com");
-        String title = driver.getTitle();
+        String url = driver.getCurrentUrl();
         File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         File targetFile = new File( System.getProperty("user.dir")+"/testData/GoogleSearchimage.png");
         FileUtils.copyFile(srcFile, targetFile);
