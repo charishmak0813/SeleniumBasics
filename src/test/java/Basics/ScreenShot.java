@@ -4,14 +4,17 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
+import java.time.Duration;
 
 public class ScreenShot {
     public static void main(String[] args) throws Exception {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.get("https://www.google.com");
         File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         File targetFile = new File( System.getProperty("user.dir")+"/testData/GoogleSearchimage.png");
@@ -26,5 +29,6 @@ public class ScreenShot {
         FileUtils.copyFile(sourceFile, targetLocation);
         driver.quit();
         //driver.close();
+
     }
 }
